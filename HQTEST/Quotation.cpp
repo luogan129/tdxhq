@@ -28,7 +28,9 @@ CQuotation::CQuotation(DWORD dwID, STOCKCODE * pStockCode, int iStockNum  )
 	ZeroMemory( & m_stockcode[0] , sizeof( STOCKCODE ) * 400 );
 	memcpy( & m_stockcode[0] ,pStockCode , sizeof( STOCKCODE) * iStockNum );
 
-	redis =new redis::client("114.25.93.208",6379,0,"myPassword");
+	//boost::shared_ptr<redis::client> shared_c;
+	//shared_c =	boost::shared_ptr<redis::client>( new redis::client("114.215.93.208",6379,0,"myPassword#fuck$ashare") );
+	redis =new redis::client("114.215.93.208",6379,0,"myPassword#fuck$ashare");// *shared_c ;//redis::client & c = *shared_c;
 }
 
 CQuotation::~CQuotation()
